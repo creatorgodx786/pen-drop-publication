@@ -3,71 +3,460 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pen Drop Poetry Publications</title>
+    <title>Pen Drop Poetry Publications | Independent Literary Excellence</title>
+    <!-- Premium Google Fonts for Clean Editorial Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+        /* Modern Reset and Logo-Derived Color Variables */
         :root {
-            --brand-navy: #081a3e;
-            --brand-orange: #ff5500;
-            --brand-cyan: #00bfff;
-            --brand-magenta: #e6006f;
-            --brand-bronze: #8c532b;
+            --brand-navy: #081a3e;       /* Base foundation color from the pen body */
+            --brand-orange: #ff5500;     /* High-impact highlight orange splash */
+            --brand-cyan: #00bfff;       /* Bright electric accent cyan */
+            --brand-magenta: #e6006f;    /* Vivid creative splash pink/magenta */
+            --brand-bronze: #8c532b;     /* Deep elegant text brown from the logo typography */
+            --bg-light: #ffffff;
+            --border-color: #f0e6df;     /* Subtle warm border pairing with the bronze */
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background-color: #ffffff; color: #222222; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
-        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: #222222;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            /* Hide default cursor so our 3D magic pen can take its place beautifully */
+            cursor: none; 
+        }
+
+        /* --- THE MAGIC WAND PEN CURSOR STYLE --- */
+        #magic-wand-pen {
+            position: fixed;
+            width: 45px;
+            height: 45px;
+            pointer-events: none; /* Prevents the pen from blocking clicks on buttons */
+            z-index: 99999;
+            transform: translate(-10px, -10px) rotate(-15deg);
+            transition: transform 0.08s cubic-bezier(0.25, 1, 0.5, 1);
+            filter: drop-shadow(4px 8px 12px rgba(255, 85, 0, 0.4));
+        }
+
+        /* Top Announcement Notification Bar */
         .announcement-bar {
             background: linear-gradient(90deg, var(--brand-navy), var(--brand-magenta), var(--brand-orange));
-            color: #ffffff; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; text-align: center; padding: 10px 20px;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            padding: 10px 20px;
         }
-        header { background-color: #ffffff; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #f0e6df; }
-        .nav-container { max-width: 1300px; margin: 0 auto; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
-        .logo-area { display: flex; flex-direction: column; text-decoration: none; }
-        .logo-main { font-family: 'Cinzel', serif; font-weight: 700; font-size: 22px; letter-spacing: 2px; color: var(--brand-bronze); }
-        .logo-sub { font-family: 'Cinzel', serif; font-size: 13px; letter-spacing: 4px; color: var(--brand-bronze); margin-top: 2px; }
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 35px; }
-        nav ul li a { color: var(--brand-navy); text-decoration: none; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; }
 
-        .hero-split { display: flex; min-height: 75vh; background-color: #fafbfc; align-items: center; }
-        .hero-text-block { flex: 1; padding: 80px 100px; max-width: 700px; animation: fadeInUp 1.2s ease both; }
-        .hero-text-block h1 { font-family: 'Cinzel', serif; font-size: 44px; color: var(--brand-navy); margin-bottom: 25px; }
-        .hero-text-block h1 span { color: var(--brand-orange); }
-        .hero-text-block p { font-size: 15px; color: #555555; margin-bottom: 40px; font-weight: 300; }
-        .hero-image-block { flex: 1; align-self: stretch; background: linear-gradient(135deg, rgba(8, 26, 62, 0.1), rgba(255, 85, 0, 0.05)), url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1000&q=80') no-repeat center center/cover; border-left: 1px solid #f0e6df; }
+        /* Executive Header and Sticky Navigation */
+        header {
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(8, 26, 62, 0.02);
+        }
 
-        .btn-primary { background-color: var(--brand-navy); color: #ffffff; padding: 16px 35px; text-decoration: none; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; display: inline-block; border: 2px solid var(--brand-navy); transition: all 0.3s ease; }
-        .btn-primary:hover { background-color: var(--brand-orange); border-color: var(--brand-orange); }
+        .nav-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        .section-container { max-width: 1300px; margin: 0 auto; padding: 100px 40px; }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-family: 'Cinzel', serif; font-size: 32px; color: var(--brand-navy); letter-spacing: 2px; margin-bottom: 15px; }
-        .section-header p { font-size: 13px; text-transform: uppercase; letter-spacing: 3px; color: var(--brand-bronze); font-weight: 600; }
+        /* Responsive Branding Layout with Logo Integration */
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 15px;
+        }
 
-        .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 50px; }
-        .catalog-card { background: #ffffff; border: 1px solid #f0e6df; display: flex; padding: 30px; position: relative; }
-        .card-left-slide { animation: slideLeft 1.2s ease both; }
-        .card-right-slide { animation: slideRight 1.2s ease both; }
+        .header-logo-icon {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+        }
+
+        .logo-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: var(--brand-bronze);
+            line-height: 1.1;
+        }
+
+        .logo-sub {
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: var(--brand-bronze);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 35px;
+        }
+
+        nav ul li a {
+            color: var(--brand-navy);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            position: relative;
+            padding-bottom: 4px;
+            cursor: none; /* Keeps native cursor hidden on links */
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--brand-cyan), var(--brand-magenta));
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Hero Split Layout */
+        .hero-split {
+            display: flex;
+            min-height: 80vh;
+            background-color: #fafbfc;
+            align-items: center;
+        }
+
+        .hero-text-block {
+            flex: 1;
+            padding: 60px 80px;
+            max-width: 650px;
+            animation: elegantFadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+        }
+
+        .hero-text-block h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 44px;
+            color: var(--brand-navy);
+            line-height: 1.25;
+            margin-bottom: 25px;
+            font-weight: 400;
+        }
+
+        .hero-text-block h1 span {
+            color: var(--brand-orange);
+            font-weight: 700;
+        }
+
+        .hero-text-block p {
+            font-size: 15px;
+            color: #555555;
+            margin-bottom: 40px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        /* 3D Display Stage for Center Opening Book Animation */
+        .hero-animation-stage {
+            flex: 1;
+            align-self: stretch;
+            background: radial-gradient(circle at center, #111b30 0%, #040b1c 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+            overflow: hidden;
+            border-left: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        /* Pure CSS Auto-Flipping Cinematic 3D Book Layout */
+        .kinetic-book {
+            width: 260px;
+            height: 380px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(20deg) rotateY(-15deg);
+            animation: steadyTheaterFloat 6s ease-in-out infinite alternate;
+        }
+
+        /* Core Cover Assemblies */
+        .book-cover-front, .book-cover-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, #2c1e18 0%, #150d0a 100%);
+            border: 2px solid var(--brand-orange);
+            border-radius: 3px 12px 12px 3px;
+            box-shadow: inset 0 0 30px rgba(0,0,0,0.8), 15px 15px 35px rgba(0,0,0,0.6);
+            transform-origin: left center;
+            backface-visibility: hidden;
+            z-index: 5;
+        }
+
+        .book-cover-front {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 25px;
+            text-align: center;
+            transform: rotateY(0deg);
+            animation: automaticBookFlip 12s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+        }
+
+        .cover-border-frame {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border: 1px solid rgba(255, 85, 0, 0.3);
+            border-radius: 2px 8px 8px 2px;
+            pointer-events: none;
+        }
+
+        .cover-title {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            color: #ffffff;
+            letter-spacing: 2px;
+            line-height: 1.3;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-top: 30px;
+        }
+
+        .cover-subtitle {
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            color: var(--brand-cyan);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        /* Inside Page Layout Layers */
+        .book-page-inside {
+            width: 96%;
+            height: 96%;
+            position: absolute;
+            top: 2%;
+            left: 2%;
+            background: #fbf5eb;
+            background-image: radial-gradient(rgba(0,0,0,0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+            border-radius: 2px 8px 8px 2px;
+            box-shadow: inset 15px 0 20px rgba(0,0,0,0.15), 5px 5px 15px rgba(0,0,0,0.3);
+            transform-origin: left center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 35px;
+            z-index: 3;
+            transform: rotateY(0deg);
+            animation: automaticPageTurn 12s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+        }
+
+        .page-text-line {
+            font-family: 'Cinzel', serif;
+            color: var(--brand-navy);
+            text-align: center;
+            font-size: 15px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .page-text-sub {
+            font-family: 'Montserrat', sans-serif;
+            color: #6d5f53;
+            font-size: 11px;
+            text-align: center;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .book-cover-back {
+            transform: rotateY(0deg);
+            z-index: 1;
+        }
+
+        /* Elegant Action Buttons */
+        .btn-primary {
+            background-color: var(--brand-navy);
+            color: #ffffff;
+            padding: 16px 35px;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s ease;
+            display: inline-block;
+            border: 2px solid var(--brand-navy);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            cursor: none;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, var(--brand-orange), var(--brand-magenta));
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+
+        .btn-primary:hover::before { left: 0; }
+        .btn-primary:hover { border-color: transparent; box-shadow: 0 8px 20px rgba(255, 85, 0, 0.25); }
+
+        /* Grid Frameworks */
+        .section-container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 120px 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 32px;
+            color: var(--brand-navy);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--brand-bronze);
+            font-weight: 600;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 50px;
+            justify-content: center;
+        }
+
+        .catalog-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            display: flex;
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            position: relative;
+        }
+
+        .card-left-slide { animation: slideApartLeft 1.5s cubic-bezier(0.25, 1, 0.5, 1) both; }
+        .card-right-slide { animation: slideApartRight 1.5s cubic-bezier(0.25, 1, 0.5, 1) both; }
+
+        .catalog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(8, 26, 62, 0.08);
+            border-color: var(--brand-cyan);
+        }
+
+        .book-container { perspective: 1000px; flex-shrink: 0; }
         
-        .book-container { flex-shrink: 0; perspective: 1000px; }
-        .book-visual { width: 130px; height: 195px; background: #040b1c; position: relative; overflow: hidden; border-left: 4px solid var(--brand-orange); box-shadow: 4px 6px 15px rgba(0,0,0,0.15); transition: transform 0.5s ease; transform-origin: left center; }
-        .book-visual img { width: 200%; height: 100%; object-fit: cover; object-position: right center; position: absolute; top: 0; right: 0; }
-        .catalog-card:hover .book-visual { transform: rotateY(-25deg); }
+        .book-visual {
+            width: 130px;
+            height: 195px;
+            background: linear-gradient(135deg, var(--brand-navy), #040b1c);
+            box-shadow: 4px 6px 18px rgba(8, 26, 62, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-family: 'Cinzel', serif;
+            font-size: 11px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            transform-origin: left center;
+            border-left: 4px solid var(--brand-orange);
+        }
+
+        .book-visual img {
+            width: 200%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right center;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .catalog-card:hover .book-visual {
+            transform: rotateY(-25deg);
+            box-shadow: 12px 12px 25px rgba(8, 26, 62, 0.3);
+        }
 
         .book-details { margin-left: 25px; display: flex; flex-direction: column; justify-content: center; }
         .book-details h3 { font-family: 'Cinzel', serif; font-size: 19px; color: var(--brand-navy); margin-bottom: 8px; }
-        .book-details h4 { font-size: 12px; color: var(--brand-magenta); text-transform: uppercase; font-weight: 600; margin-bottom: 12px; }
+        .book-details h4 { font-size: 12px; color: var(--brand-magenta); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; font-weight: 600; }
         .book-details p { font-size: 13px; color: #555555; font-weight: 300; }
 
-        .portal-bg { background-color: #fafbfc; border-top: 1px solid #f0e6df; border-bottom: 1px solid #f0e6df; }
-        .portal-form-wrapper { max-width: 750px; margin: 0 auto; background-color: #ffffff; border: 1px solid #f0e6df; padding: 50px 60px; border-top: 4px solid var(--brand-orange); }
+        .portal-bg { background-color: #fafbfc; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        .portal-form-wrapper { max-width: 750px; margin: 0 auto; background-color: #ffffff; border: 1px solid var(--border-color); padding: 50px 60px; box-shadow: 0 10px 30px rgba(8, 26, 62, 0.01); border-top: 4px solid var(--brand-orange); }
         .form-row { display: flex; gap: 20px; margin-bottom: 25px; }
         .form-field { flex: 1; display: flex; flex-direction: column; }
         .form-field.full-width { margin-bottom: 25px; }
-        .form-field label { font-size: 11px; font-weight: 600; text-transform: uppercase; color: var(--brand-navy); margin-bottom: 10px; }
-        .form-field input, .form-field textarea { width: 100%; padding: 14px; border: 1px solid #dcdfe3; font-family: 'Montserrat', sans-serif; font-size: 13px; outline: none; }
+        .form-field label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--brand-navy); margin-bottom: 10px; }
+        .form-field input, .form-field textarea { width: 100%; padding: 14px; border: 1px solid #dcdfe3; font-family: 'Montserrat', sans-serif; font-size: 13px; outline: none; cursor: none; }
         .form-field input:focus, .form-field textarea:focus { border-color: var(--brand-cyan); }
 
         footer { background-color: var(--brand-navy); color: #ffffff; padding: 60px 40px; text-align: center; border-top: 4px solid var(--brand-orange); }
@@ -75,37 +464,65 @@
         footer .footer-subbrand { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 4px; margin-bottom: 20px; color: var(--brand-cyan); }
         footer p { font-size: 12px; color: #a2b0c4; }
 
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes slideLeft { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
-        @keyframes slideRight { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
-
-        @media (max-width: 992px) {
-            .hero-split { flex-direction: column; }
-            .hero-image-block { height: 350px; width: 100%; }
-            .hero-text-block { padding: 60px 30px; text-align: center; }
-            .form-row { flex-direction: column; }
-            .card-left-slide, .card-right-slide { animation: fadeInUp 1s ease forwards; }
+        /* --- KEYFRAME ENGINES --- */
+        @keyframes steadyTheaterFloat {
+            0% { transform: rotateX(15deg) rotateY(-10deg) translateY(0px); }
+            100% { transform: rotateX(22deg) rotateY(-20deg) translateY(-15deg); }
         }
-        @media (max-width: 768px) {
-            .nav-container { flex-direction: column; }
-            nav ul { margin-top: 20px; }
-            .catalog-card { flex-direction: column; align-items: center; text-align: center; }
-            .book-details { margin-left: 0; margin-top: 25px; }
-            .catalog-grid { grid-template-columns: 1fr; }
+        @keyframes automaticBookFlip {
+            0%, 15%, 85%, 100% { transform: rotateY(0deg); z-index: 5; }
+            35%, 65% { transform: rotateY(-135deg); z-index: 1; }
+        }
+        @keyframes automaticPageTurn {
+            0%, 20%, 80%, 100% { transform: rotateY(0deg); }
+            38%, 62% { transform: rotateY(-125deg); }
+        }
+        @keyframes elegantFadeInUp {
+            from { opacity: 0; transform: translateY(30px); filter: blur(4px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+        @keyframes slideApartLeft {
+            0% { opacity: 0; transform: translateX(30%) scale(0.95); }
+            30% { opacity: 1; transform: translateX(30%) scale(1); }
+            100% { transform: translateX(0) scale(1); }
+        }
+        @keyframes slideApartRight {
+            0% { opacity: 0; transform: translateX(-30%) scale(0.95); }
+            30% { opacity: 1; transform: translateX(-30%) scale(1); }
+            100% { transform: translateX(0) scale(1); }
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 992px) {
+            body { cursor: default; } /* Bring back classic touch metrics on mobile devices */
+            #magic-wand-pen { display: none; }
+            .hero-split { flex-direction: column; }
+            .hero-animation-stage { height: 450px; width: 100%; border-left: none; border-top: 1px solid var(--border-color); }
+            .hero-text-block { padding: 60px 30px; text-align: center; }
+            .form-row { flex-direction: column; gap: 25px; }
+            .portal-form-wrapper { padding: 40px 25px; }
+            .card-left-slide, .card-right-slide { animation: elegantFadeInUp 1.2s ease forwards; }
         }
     </style>
 </head>
 <body>
 
+    <!-- THE DYNAMIC 3D MAGIC WAND PEN CURSOR ICON -->
+    <img id="magic-wand-pen" src="images/logo.jpeg" alt="Magic Pen Icon">
+
     <div class="announcement-bar">
         Now Reviewing Manuscripts For Our Upcoming National Anthologies
     </div>
 
+    <!-- Navigation Header -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo-area">
-                <div class="logo-main">PEN DROP POETRY</div>
-                <div class="logo-sub">PUBLICATIONS</div>
+            <a href="#" class="logo-link">
+                <img src="images/logo.jpeg" alt="Pen Drop Poetry Logo" class="header-logo-icon" onerror="this.style.display='none'">
+                <div class="logo-area">
+                    <div class="logo-main">PEN DROP POETRY</div>
+                    <div class="logo-sub">PUBLICATIONS</div>
+                </div>
             </a>
             <nav>
                 <ul>
@@ -117,15 +534,34 @@
         </div>
     </header>
 
+    <!-- Split Hero Section with Self-Opening 3D Book -->
     <section id="about" class="hero-split">
         <div class="hero-text-block">
             <h1>Expressing the <span>Unexpressed</span></h1>
-            <p>Pen Drop Poetry Publications operates as a premier independent literary house dedicated to cultivating modern poetic talent. We provide a refined, highly vibrant platform designed to launch authentic contemporary poetry, long-form creative prose, and deep independent insights to readers globally.</p>
+            <p>
+                Pen Drop Poetry Publications operates as a premier independent literary house dedicated to cultivating modern poetic talent. We provide a refined, highly vibrant platform designed to launch authentic contemporary poetry, long-form creative prose, and deep independent insights to readers globally.
+            </p>
             <a href="#submissions" class="btn-primary">Submit Manuscript</a>
         </div>
-        <div class="hero-image-block"></div>
+        
+        <div class="hero-animation-stage">
+            <div class="kinetic-book">
+                <div class="book-cover-front">
+                    <div class="cover-border-frame"></div>
+                    <div class="cover-title">PEN DROP<br>POETRY</div>
+                    <div class="cover-subtitle">PUBLICATIONS</div>
+                    <div style="width: 20px; height: 2px; background: var(--brand-orange);"></div>
+                </div>
+                <div class="book-page-inside">
+                    <div class="page-text-line">Volume I</div>
+                    <div class="page-text-sub">"The ink drops deep into the blank horizon, voicing the silent chambers of human truth."</div>
+                </div>
+                <div class="book-cover-back"></div>
+            </div>
+        </div>
     </section>
 
+    <!-- Publications Catalog Showcase -->
     <section id="catalog" class="section-container">
         <div class="section-header">
             <h2>Featured Catalog</h2>
@@ -133,6 +569,7 @@
         </div>
         <div class="catalog-grid">
             
+            <!-- Book 1 -->
             <div class="catalog-card card-left-slide">
                 <div class="book-container">
                     <div class="book-visual">
@@ -142,10 +579,11 @@
                 <div class="book-details">
                     <h3>That Stage of Life</h3>
                     <h4>Echoes of Friendship & Connection</h4>
-                    <p>Compiled by Anagha Krishna V P. This anthology gathers the fragmented memories of connection, the unspoken vows of loyalty, and the warm, steady presence of friends.</p>
+                    <p>Compiled by Anagha Krishna V P. This anthology gathers the fragmented memories of connection, the unspoken vows of loyalty, and the warm, steady presence of those we call friends.</p>
                 </div>
             </div>
 
+            <!-- Book 2 -->
             <div class="catalog-card card-right-slide">
                 <div class="book-container">
                     <div class="book-visual" style="border-left-color: var(--brand-magenta);">
@@ -159,6 +597,7 @@
                 </div>
             </div>
 
+            <!-- Book 3 -->
             <div class="catalog-card card-left-slide">
                 <div class="book-container">
                     <div class="book-visual" style="border-left-color: var(--brand-cyan);">
@@ -172,6 +611,7 @@
                 </div>
             </div>
 
+            <!-- Book 4 -->
             <div class="catalog-card card-right-slide">
                 <div class="book-container">
                     <div class="book-visual">
@@ -185,6 +625,7 @@
                 </div>
             </div>
 
+            <!-- Book 5 -->
             <div class="catalog-card card-left-slide">
                 <div class="book-container">
                     <div class="book-visual" style="border-left-color: var(--brand-magenta);">
@@ -198,6 +639,7 @@
                 </div>
             </div>
 
+            <!-- Book 6 -->
             <div class="catalog-card card-right-slide">
                 <div class="book-container">
                     <div class="book-visual" style="border-left-color: var(--brand-cyan);">
@@ -214,6 +656,7 @@
         </div>
     </section>
 
+    <!-- Submission Portal -->
     <section id="submissions" class="portal-bg">
         <div class="section-container">
             <div class="section-header">
@@ -223,6 +666,7 @@
             <div class="portal-form-wrapper">
                 <form name="publication-submissions" method="POST" data-netlify="true">
                     <input type="hidden" name="form-name" value="publication-submissions" />
+                    
                     <div class="form-row">
                         <div class="form-field">
                             <label>Author Full Name</label>
@@ -233,6 +677,7 @@
                             <input type="email" name="authorEmail" placeholder="e.g., jane@example.com" required>
                         </div>
                     </div>
+                    
                     <div class="form-row">
                         <div class="form-field">
                             <label>Manuscript Title</label>
@@ -243,10 +688,12 @@
                             <input type="text" name="genre" placeholder="e.g., Poetry, Non-Fiction, Novel" required>
                         </div>
                     </div>
+                    
                     <div class="form-field full-width">
                         <label>Concept Synopsis & Outline Summary</label>
-                        <textarea name="synopsisSummary" rows="6" placeholder="Provide a brief outline detailing your core chapters..." required></textarea>
+                        <textarea name="synopsisSummary" rows="6" placeholder="Provide a brief outline detailing your core chapters or overarching concept themes..." required></textarea>
                     </div>
+                    
                     <button type="submit" class="btn-primary" style="width: 100%; text-align: center; border: none;">Submit Literary Proposal</button>
                 </form>
             </div>
@@ -258,6 +705,17 @@
         <div class="footer-subbrand">PUBLICATIONS</div>
         <p>&copy; 2026 Pen Drop Poetry Publications. All rights reserved.</p>
     </footer>
+
+    <!-- MAGIC WAND CURSOR PHYSICS TRACKER -->
+    <script>
+        const magicPen = document.getElementById('magic-wand-pen');
+        
+        window.addEventListener('mousemove', (e) => {
+            // Instantly syncs the pen's 2D position with the cursor coordinates
+            magicPen.style.left = e.clientX + 'px';
+            magicPen.style.top = e.clientY + 'px';
+        });
+    </script>
 
 </body>
 </html>
