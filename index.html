@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pen Drop Publication | Independent Literary Excellence</title>
+    
+    <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -389,7 +392,7 @@
         }
 
         .book-container { perspective: 1000px; flex-shrink: 0; }
-        
+         
         .book-visual {
             width: 130px;
             height: 195px;
@@ -529,7 +532,7 @@
             </p>
             <a href="#submissions" class="btn-primary">Submit Manuscript</a>
         </div>
-        
+         
         <div class="hero-animation-stage">
             <div class="kinetic-book">
                 <div class="book-cover-front">
@@ -548,7 +551,7 @@
             <p>Our Outstanding Distributed Collections</p>
         </div>
         <div class="catalog-grid">
-            
+             
             <div class="catalog-card card-left-slide">
                 <div class="book-container">
                     <div class="book-visual">
@@ -639,7 +642,7 @@
             <div class="portal-form-wrapper">
                 <form name="publication-submissions" method="POST" data-netlify="true">
                     <input type="hidden" name="form-name" value="publication-submissions" />
-                    
+                     
                     <div class="form-row">
                         <div class="form-field">
                             <label>Author Full Name</label>
@@ -650,7 +653,7 @@
                             <input type="email" name="authorEmail" placeholder="e.g., jane@example.com" required>
                         </div>
                     </div>
-                    
+                     
                     <div class="form-row">
                         <div class="form-field">
                             <label>Manuscript Title</label>
@@ -661,12 +664,12 @@
                             <input type="text" name="genre" placeholder="e.g., Poetry, Non-Fiction, Novel" required>
                         </div>
                     </div>
-                    
+                     
                     <div class="form-field full-width">
                         <label>Concept Synopsis & Outline Summary</label>
                         <textarea name="synopsisSummary" rows="6" placeholder="Provide a brief outline detailing your core chapters or overarching concept themes..." required></textarea>
                     </div>
-                    
+                     
                     <button type="submit" class="btn-primary" style="width: 100%; text-align: center; border: none;">Submit Literary Proposal</button>
                 </form>
             </div>
@@ -692,7 +695,7 @@
                 particle.className = 'ink-splash-particle';
                 particle.style.left = e.clientX + 'px';
                 particle.style.top = e.clientY + 'px';
-                
+                 
                 particle.style.backgroundColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
                 document.body.appendChild(particle);
 
