@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pen Drop Poetry Publications | Independent Literary Excellence</title>
+    <title>Pen Drop Publication | Independent Literary Excellence</title>
     <!-- Premium Google Fonts for Clean Editorial Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,29 +36,29 @@
             font-family: 'Montserrat', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
-            /* Hides default native cursor on desktop to allow magic pencil tracing */
+            /* Hides default native cursor on desktop to allow magic wand tracing */
             cursor: none; 
         }
 
-        /* --- PURE CSS DESIGNED MAGIC WAND PENCIL CURSOR --- */
+        /* --- CORRECTED DOWNWARD POINTING MAGIC WAND CURSOR --- */
         #magic-wand-pencil {
             position: fixed;
             width: 8px;
             height: 40px;
             pointer-events: none; 
             z-index: 99999;
-            transform: translate(-50%, -100%) rotate(25deg);
-            transform-origin: bottom center;
-            /* Sleek wooden pencil look */
-            background: linear-gradient(90deg, #d4a373 0%, #a98467 100%);
+            /* Flipped to point downwards naturally matching hand position */
+            transform: translate(-50%, 0%) rotate(155deg);
+            transform-origin: top center;
+            background: linear-gradient(180deg, #d4a373 0%, #a98467 100%);
             border-radius: 2px;
         }
 
-        /* Magical glowing wand core at the tip of the pencil */
+        /* Glowing magical tip positioned at the bottom of the downward wand */
         #magic-wand-pencil::after {
             content: '';
             position: absolute;
-            bottom: -6px;
+            top: -6px;
             left: 50%;
             transform: translateX(-50%);
             width: 10px;
@@ -80,7 +80,7 @@
             padding: 10px 20px;
         }
 
-        /* Header and Sticky Navigation */
+        /* Header and Sticky Navigation configured to blend seamlessly with pure white backgrounds */
         header {
             background-color: #ffffff;
             position: sticky;
@@ -97,6 +97,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            background-color: #ffffff;
         }
 
         .logo-link {
@@ -104,12 +105,14 @@
             align-items: center;
             text-decoration: none;
             gap: 15px;
+            background-color: #ffffff;
         }
 
         .header-logo-icon {
             width: 50px;
             height: 50px;
             object-fit: contain;
+            background-color: #ffffff;
         }
 
         .logo-area {
@@ -210,7 +213,7 @@
             line-height: 1.8;
         }
 
-        /* 3D Theatre Display Stage */
+        /* 3D Display Stage */
         .hero-animation-stage {
             flex: 1;
             align-self: stretch;
@@ -273,10 +276,10 @@
 
         .cover-title {
             font-family: 'Cinzel', serif;
-            font-size: 20px;
+            font-size: 22px;
             color: #d1b894; 
             letter-spacing: 2px;
-            line-height: 1.4;
+            line-height: 1.5;
             text-shadow: 2px 3px 6px rgba(0,0,0,0.9);
             font-weight: 700;
         }
@@ -498,7 +501,7 @@
 </head>
 <body>
 
-    <!-- MAGICAL PENCIL CURSOR WITH INFRARED GLOW TIP -->
+    <!-- CORRECTED DOWNWARD MAGIC WAND CURSOR -->
     <div id="magic-wand-pencil"></div>
 
     <div class="announcement-bar">
@@ -509,7 +512,6 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo-link">
-                <!-- Displays the company identity graphic file directly at the left header space -->
                 <img src="images/logo.jpeg" alt="Pen Drop Poetry Logo" class="header-logo-icon">
                 <div class="logo-area">
                     <div class="logo-main">PEN DROP POETRY</div>
@@ -538,10 +540,10 @@
         
         <div class="hero-animation-stage">
             <div class="kinetic-book">
-                <!-- Cover Face displaying ONLY your company name -->
+                <!-- Cover Face displaying ONLY your requested title format -->
                 <div class="book-cover-front">
                     <div class="cover-border-frame"></div>
-                    <div class="cover-title">PEN DROP<br>POETRY<br>PUBLICATIONS</div>
+                    <div class="cover-title">PEN DROP<br>PUBLICATION</div>
                 </div>
                 <!-- Blank Yellow Rusty Inside Parchment Pages -->
                 <div class="book-page-inside"></div>
