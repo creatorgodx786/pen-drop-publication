@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pen Drop Publication | Independent Literary Excellence</title>
     
+    <!-- Custom Browser Tab Favicon Logo -->
     <link rel="icon" type="image/jpeg" href="images/logo.jpeg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -115,6 +116,7 @@
         .logo-area {
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
         .logo-main {
@@ -124,6 +126,14 @@
             letter-spacing: 2px;
             color: var(--brand-bronze);
             line-height: 1.1;
+        }
+        
+        .logo-main sup {
+            font-size: 10px;
+            font-weight: 600;
+            margin-left: 2px;
+            color: var(--brand-bronze);
+            vertical-align: super;
         }
 
         .logo-sub {
@@ -441,63 +451,8 @@
         .form-field input, .form-field textarea { width: 100%; padding: 14px; border: 1px solid #dcdfe3; font-family: 'Montserrat', sans-serif; font-size: 13px; outline: none; cursor: none; }
         .form-field input:focus, .form-field textarea:focus { border-color: var(--brand-cyan); }
 
-        footer { background-color: var(--brand-navy); color: #ffffff; padding: 60px 40px; text-align: center; border-top: 4px solid var(--brand-orange); }
-        footer .footer-brand { font-family: 'Cinzel', serif; font-size: 20px; letter-spacing: 2px; margin-bottom: 10px; }
-        footer .footer-subbrand { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 4px; margin-bottom: 20px; color: var(--brand-cyan); }
-        footer p { font-size: 12px; color: #a2b0c4; }
-
-        /* KEYFRAMES CORE ENGINE */
-        @keyframes steadyTheaterFloat {
-            0% { transform: rotateX(15deg) rotateY(-10deg) translateY(0px); }
-            100% { transform: rotateX(22deg) rotateY(-20deg) translateY(-15deg); }
-        }
-        @keyframes automaticBookFlip {
-            0%, 15%, 85%, 100% { transform: rotateY(0deg); z-index: 5; }
-            35%, 65% { transform: rotateY(-145deg); z-index: 1; }
-        }
-        @keyframes automaticPageTurn {
-            0%, 20%, 80%, 100% { transform: rotateY(0deg); }
-            38%, 62% { transform: rotateY(-135deg); }
-        }
-        @keyframes elegantFadeInUp {
-            from { opacity: 0; transform: translateY(30px); filter: blur(4px); }
-            to { opacity: 1; transform: translateY(0); filter: blur(0); }
-        }
-        @keyframes slideApartLeft {
-            0% { opacity: 0; transform: translateX(30%) scale(0.95); }
-            30% { opacity: 1; transform: translateX(30%) scale(1); }
-            100% { transform: translateX(0) scale(1); }
-        }
-        @keyframes slideApartRight {
-            0% { opacity: 0; transform: translateX(-30%) scale(0.95); }
-            30% { opacity: 1; transform: translateX(-30%) scale(1); }
-            100% { transform: translateX(0) scale(1); }
-        }
-
-        /* Mobile Layout Adjustments */
-        @media (max-width: 992px) {
-            body { cursor: default; } 
-            .ink-dot, .ink-splash-particle { display: none; }
-            .hero-split { flex-direction: column; }
-            .hero-animation-stage { height: 450px; width: 100%; border-left: none; border-top: 1px solid var(--border-color); }
-            .hero-text-block { padding: 60px 30px; text-align: center; }
-            .form-row { flex-direction: column; gap: 25px; }
-            .portal-form-wrapper { padding: 40px 25px; }
-            .card-left-slide, .card-right-slide { animation: elegantFadeInUp 1.2s ease forwards; }
-        }
-
-        @media (max-width: 768px) {
-            .nav-container { flex-direction: column; gap: 15px; }
-            nav ul { flex-wrap: wrap; justify-content: center; }
-            nav ul li { margin: 5px 15px; }
-            .hero-text-block h1 { font-size: 32px; }
-            .catalog-card { flex-direction: column; align-items: center; text-align: center; }
-            .book-details { margin-left: 0; margin-top: 25px; }
-            .catalog-grid { grid-template-columns: 1fr; }
-        }
-
         /* ==========================================================================
-           --- NEW COMPETITOR-INSPIRED ANIMATIONS & INJECTED STYLES (UNTOUCHED FOUNDATION) ---
+           --- PREMIUM ADDED STYLES FROM COMPETITOR IMAGES (UNTOUCHED FOUNDATION) ---
            ========================================================================== */
         
         .registered-tag {
@@ -556,150 +511,462 @@
             font-weight: 600;
         }
 
-        /* Seamless Infinite Distribution Marquee Engine */
-        .distribution-ticker-section {
+        /* 1. Our Services Styling */
+        .services-section {
             background-color: #ffffff;
-            padding: 40px 0;
-            overflow: hidden;
+            padding: 100px 40px;
             border-bottom: 1px solid var(--border-color);
-            position: relative;
         }
-
-        .distribution-ticker-section::before, .distribution-ticker-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 150px;
-            height: 100%;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .distribution-ticker-section::before { left: 0; background: linear-gradient(90deg, #ffffff, transparent); }
-        .distribution-ticker-section::after { right: 0; background: linear-gradient(-90deg, #ffffff, transparent); }
-
-        .marquee-track {
-            display: flex;
-            width: max-content;
-            animation: continuousHorizontalMarquee 25s linear infinite;
-        }
-
-        .marquee-track:hover {
-            animation-play-state: paused;
-        }
-
-        .partner-logo-item {
+        
+        .services-title-custom {
             font-family: 'Cinzel', serif;
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: 3px;
-            color: #bfa693;
-            padding: 0 60px;
+            font-size: 56px;
+            font-weight: 300;
+            color: var(--brand-navy);
+            text-align: center;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            display: flex;
-            align-items: center;
-            mix-blend-mode: multiply;
-        }
-
-        @keyframes continuousHorizontalMarquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* 3D Dynamic Interactive Roadmap Layout */
-        .roadmap-section {
-            background-color: #ffffff;
-            padding: 120px 40px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .roadmap-timeline-grid {
-            max-width: 1100px;
-            margin: 50px auto 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            position: relative;
-        }
-
-        .roadmap-step-card {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            padding: 40px 30px;
-            border-radius: 4px;
-            position: relative;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            line-height: 1;
+            margin-bottom: 15px;
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
+            transition: all 1s ease-out;
         }
-
-        .roadmap-step-card.is-visible {
+        
+        .services-title-custom.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        .roadmap-step-card:hover {
-            transform: translateY(-8px);
-            border-color: var(--brand-orange);
-            box-shadow: 0 20px 40px rgba(255, 85, 0, 0.08);
+        .services-grid {
+            max-width: 1200px;
+            margin: 60px auto 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
-        .step-number-badge {
+        .service-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 8px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--brand-cyan);
+            box-shadow: 0 15px 35px rgba(8, 26, 62, 0.06);
+        }
+
+        .service-icon-svg {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 25px;
+            fill: var(--brand-navy);
+            transition: fill 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon-svg {
+            fill: var(--brand-orange);
+        }
+
+        .service-card h3 {
             font-family: 'Cinzel', serif;
-            font-size: 14px;
+            font-size: 18px;
+            color: var(--brand-navy);
+            margin-bottom: 10px;
             font-weight: 700;
-            width: 35px;
-            height: 35px;
+        }
+
+        .service-card p {
+            font-size: 13px;
+            color: var(--brand-bronze);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        /* 2. Get Published Blocks Layout */
+        .get-published-section {
+            background-color: #ffffff;
+            padding: 100px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .published-grid {
+            max-width: 1200px;
+            margin: 50px auto 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 25px;
+        }
+
+        .published-card {
+            background-color: #1a2536;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 6px;
+            text-align: center;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .published-card:hover {
+            background-color: var(--brand-navy);
+            box-shadow: 0 10px 25px rgba(8, 26, 62, 0.15);
+        }
+
+        .published-card-icon {
+            font-size: 28px;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .published-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .published-card p {
+            font-size: 13px;
+            color: #a2b0c4;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* 3. Testimonials Interactive Blocks */
+        .testimonials-section {
+            background-color: #ffffff;
+            padding: 100px 40px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .testimonials-grid-wrapper {
+            max-width: 1200px;
+            margin: 50px auto 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .testimonial-carousel-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            width: 100%;
+        }
+
+        .testimonial-node-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.01);
+            position: relative;
+        }
+
+        .author-avatar-frame {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px auto;
+            display: block;
+            border: 2px solid var(--border-color);
+        }
+
+        .rating-stars-row {
+            color: #ffb400;
+            font-size: 14px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-node-card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--brand-navy);
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-node-card p {
+            font-size: 13px;
+            color: #555555;
+            line-height: 1.7;
+            font-weight: 300;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-timestamp-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px solid #fcf9f7;
+        }
+
+        .timestamp-text {
+            font-size: 11px;
+            color: var(--brand-cyan);
+            font-weight: 500;
+        }
+
+        .google-source-icon {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+        }
+
+        .carousel-arrow-btn {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background-color: var(--brand-navy);
             color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            border: none;
+            cursor: none;
             transition: background-color 0.3s ease;
+            font-size: 14px;
         }
 
-        .roadmap-step-card:hover .step-number-badge {
+        .carousel-arrow-btn:hover {
             background-color: var(--brand-orange);
         }
 
-        .step-heading {
+        /* Animated Section Headers Engine */
+        .animated-section-header-custom {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .animated-section-header-custom.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Premium Columns Footer Design */
+        .main-footer {
+            background-color: var(--brand-navy);
+            color: #ffffff;
+            padding: 80px 40px 30px 40px;
+            border-top: 4px solid var(--brand-orange);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-columns-grid {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 2fr;
+            gap: 40px;
+            padding-bottom: 50px;
+        }
+
+        .footer-brand-col {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .footer-logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo-img {
+            width: 45px;
+            height: 45px;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+            background-color: #ffffff;
+            border-radius: 4px;
+            padding: 2px;
+        }
+
+        .footer-brand-title {
             font-family: 'Cinzel', serif;
             font-size: 18px;
-            color: var(--brand-navy);
-            margin-bottom: 12px;
+            letter-spacing: 2px;
             font-weight: 700;
+            color: #ffffff;
         }
 
-        .step-body-text {
+        .footer-mission-text {
             font-size: 13px;
-            color: #666666;
+            color: #a2b0c4;
+            line-height: 1.8;
             font-weight: 300;
-            line-height: 1.7;
         }
 
-        /* Secure Verified Footer Legal Strip Adjustments */
-        .footer-legal-container {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-            font-size: 11px;
-            letter-spacing: 1px;
-            color: #7185a0;
+        .footer-links-col {
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
             gap: 15px;
-            flex-wrap: wrap;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+            padding-left: 30px;
         }
 
-        .verification-dot {
-            width: 5px;
-            height: 5px;
-            background-color: var(--brand-cyan);
+        .footer-links-col a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            cursor: none;
+        }
+
+        .footer-links-col a:hover {
+            color: var(--brand-cyan);
+        }
+
+        .footer-newsletter-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .newsletter-title {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .newsletter-desc {
+            font-size: 12px;
+            color: #a2b0c4;
+        }
+
+        .newsletter-input-box {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #222222;
+            font-size: 13px;
+            outline: none;
+            border-radius: 4px;
+            cursor: none;
+        }
+
+        .newsletter-btn {
+            background-color: var(--brand-navy);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: none;
+            width: 100%;
+        }
+
+        .newsletter-btn:hover {
+            background-color: var(--brand-orange);
+            border-color: transparent;
+        }
+
+        .footer-bottom-strip {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-copyright {
+            font-size: 12px;
+            color: #a2b0c4;
+            flex: 1;
+            min-width: 280px;
+        }
+
+        .footer-social-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon-circle {
+            width: 36px;
+            height: 36px;
+            background-color: #ffffff;
             border-radius: 50%;
-            display: inline-block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-navy);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+            cursor: none;
+            text-transform: lowercase;
+        }
+
+        .social-icon-circle:hover {
+            transform: translateY(-3px);
+            background-color: var(--brand-cyan);
+            color: #ffffff;
+        }
+
+        /* Floating Sticky WhatsApp Badge */
+        .whatsapp-sticky-icon {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            z-index: 9999;
+            transition: transform 0.3s ease;
+            cursor: none;
+        }
+
+        .whatsapp-sticky-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-sticky-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media (max-width: 992px) {
+            .footer-columns-grid { grid-template-columns: 1fr 1fr; }
+            .footer-links-col { border-left: none; padding-left: 0; }
+            .services-title-custom { font-size: 42px; }
+        }
+
+        @media (max-width: 768px) {
+            .footer-columns-grid { grid-template-columns: 1fr; }
+            .footer-bottom-strip { flex-direction: column; text-align: center; }
+            .testimonials-grid-wrapper { flex-direction: column; }
         }
     </style>
 </head>
@@ -716,14 +983,16 @@
             <a href="#" class="logo-link">
                 <img src="images/logo.jpeg" alt="Pen Drop Poetry Logo" class="header-logo-icon">
                 <div class="logo-area">
-                    <div class="logo-main">PEN DROP POETRY</div>
+                    <!-- Inserted Registered ® Symbol to Header Brand Title -->
+                    <div class="logo-main">PEN DROP POETRY<sup>®</sup></div>
                     <div class="logo-sub">PUBLICATIONS</div>
                 </div>
             </a>
             <nav>
                 <ul>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#process">Publishing Journey</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#get-published">Get Published</a></li>
                     <li><a href="#catalog">Catalog</a></li>
                     <li><a href="#submissions">Submissions</a></li>
                 </ul>
@@ -753,10 +1022,11 @@
         </div>
     </section>
 
+    <!-- RUNTIME MILESTONE TICKER BANNER (ADJUSTED TARGET NUMBERS) -->
     <section class="stats-counter-banner">
         <div class="stats-wrapper">
             <div class="stat-item">
-                <div class="stat-number" data-target="500">0</div>
+                <div class="stat-number" data-target="10">0</div>
                 <div class="stat-label">Books Published</div>
             </div>
             <div class="stat-item">
@@ -764,58 +1034,91 @@
                 <div class="stat-label">% Author Royalty</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number" data-target="15">0</div>
+                <div class="stat-number" data-target="5">0</div>
                 <div class="stat-label">Countries Reached</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number" data-target="2500">0</div>
+                <div class="stat-number" data-target="300">0</div>
                 <div class="stat-label">Community Poets</div>
             </div>
         </div>
     </section>
 
-    <section class="distribution-ticker-section">
-        <div class="marquee-track">
-            <div class="partner-logo-item">Amazon Kindle</div>
-            <div class="partner-logo-item">Flipkart</div>
-            <div class="partner-logo-item">Google Books</div>
-            <div class="partner-logo-item">IngramSpark</div>
-            <div class="partner-logo-item">Barnes & Noble</div>
-            <div class="partner-logo-item">Kobo Books</div>
-            <div class="partner-logo-item">Amazon Kindle</div>
-            <div class="partner-logo-item">Flipkart</div>
-            <div class="partner-logo-item">Google Books</div>
-            <div class="partner-logo-item">IngramSpark</div>
-            <div class="partner-logo-item">Barnes & Noble</div>
-            <div class="partner-logo-item">Kobo Books</div>
+    <!-- 1. OUR SERVICES BLOCK (FROM SECTION PHOTO: Screenshot 2026-06-02 133511.png) -->
+    <section id="services" class="services-section">
+        <div class="services-title-custom animated-section-header-custom">OUR SERVICES</div>
+        <div class="section-header animated-section-header-custom" style="margin-bottom: 0;">
+            <p>Empowering writers with seamless publishing, creative workshops, and a thriving literary community.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <svg class="service-icon-svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                <h3>Publishing Activities</h3>
+                <p>Your Story, Our Mission</p>
+            </div>
+            <div class="service-card">
+                <svg class="service-icon-svg" viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h5v2h8v-2h5c1.1 0 1.99-.9 1.99-2L23 5c0-1.1-.9-2-2-2zm0 14H3V5h18v12z"/></svg>
+                <h3>Workshops & Webinars</h3>
+                <p>Learn, Grow, Conquer</p>
+            </div>
+            <div class="service-card">
+                <svg class="service-icon-svg" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM4.26 12L12 16.22 19.74 12 12 7.78 4.26 12z"/></svg>
+                <h3>Online Courses & Training</h3>
+                <p>Master Your Craft at Your Pace</p>
+            </div>
+            <div class="service-card">
+                <svg class="service-icon-svg" viewBox="0 0 24 24"><path d="M19 5h-2V3c0-1.1-.9-2-2-2H9c-1.1 0-2 .9-2 2v2H5c-1.1 0-2 .9-2 2v13c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-6 11h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+                <h3>Events, Awards & Open mics</h3>
+                <p>Turn Talent into Triumph</p>
+            </div>
+            <div class="service-card">
+                <svg class="service-icon-svg" viewBox="0 0 24 24"><path d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"/></svg>
+                <h3>Podcasts & Fellowships</h3>
+                <p>Amplify Your Voice</p>
+            </div>
+            <div class="service-card">
+                <svg class="service-icon-svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                <h3>Community & Networking</h3>
+                <p>Because Writers Thrive Together</p>
+            </div>
         </div>
     </section>
 
-    <section id="process" class="roadmap-section">
-        <div class="section-header">
-            <h2>The Author's Journey</h2>
-            <p>Your Blueprint From Manuscript to Global Release</p>
+    <!-- 2. GET PUBLISHED BLOCKS (FROM SECTION PHOTO: Screenshot 2026-06-02 133523.png) -->
+    <section id="get-published" class="get-published-section">
+        <div class="section-header animated-section-header-custom">
+            <h2 style="font-size: 44px; font-weight: 300;">Get Published</h2>
         </div>
-        <div class="roadmap-timeline-grid">
-            <div class="roadmap-step-card">
-                <div class="step-number-badge">01</div>
-                <div class="step-heading">Submission</div>
-                <div class="step-body-text">Submit your raw concept or structured manuscript directly via our highly encrypted web reception portals.</div>
+        <div class="published-grid">
+            <div class="published-card">
+                <div class="published-card-icon">🚀</div>
+                <h3>Fast & Hassle-Free Publishing</h3>
+                <p>Publish your book within weeks, not months.</p>
             </div>
-            <div class="roadmap-step-card">
-                <div class="step-number-badge">02</div>
-                <div class="step-heading">Review</div>
-                <div class="step-body-text">Our dedicated literary selection panels evaluate structure, aesthetic expression, and core depth metrics.</div>
+            <div class="published-card">
+                <div class="published-card-icon">🛡️</div>
+                <h3>Complete Creative Freedom</h3>
+                <p>Retain 100% rights to your work, always.</p>
             </div>
-            <div class="roadmap-step-card">
-                <div class="step-number-badge">03</div>
-                <div class="step-heading">Design</div>
-                <div class="step-body-text">Receive customized interior composition typography layers alongside professional thematic exterior cover illustrations.</div>
+            <div class="published-card">
+                <div class="published-card-icon">💰</div>
+                <h3>Highest Royalty Guaranteed</h3>
+                <p>Earn up to 100% royalty on every book sale.</p>
             </div>
-            <div class="roadmap-step-card">
-                <div class="step-number-badge">04</div>
-                <div class="step-heading">Distribution</div>
-                <div class="step-body-text">Watch your final volume propagate perfectly onto physical print counters and global digital storefront inventories.</div>
+            <div class="published-card">
+                <div class="published-card-icon">🌐</div>
+                <h3>Global Distribution</h3>
+                <p>Get your book listed on Amazon, Kindle, Google Play Books and more.</p>
+            </div>
+            <div class="published-card">
+                <div class="published-card-icon">📖</div>
+                <h3>Personalized Author Support</h3>
+                <p>Our team guides you through every step — from editing to marketing.</p>
+            </div>
+            <div class="published-card">
+                <div class="published-card-icon">👥</div>
+                <h3>Built-in Community & Events</h3>
+                <p>Access monthly open mics, writing workshops, and literary awards.</p>
             </div>
         </div>
     </section>
@@ -908,6 +1211,49 @@
         </div>
     </section>
 
+    <!-- 3. TESTIMONIALS WITH REAL INDIAN NAMES (FROM SECTION PHOTO: Screenshot 2026-06-02 133452.png) -->
+    <section class="testimonials-section">
+        <div class="section-header animated-section-header-custom">
+            <h2 style="font-size: 38px; font-weight: 400;">Testimonials from Our Writing Family</h2>
+        </div>
+        <div class="testimonials-grid-wrapper">
+            <button class="carousel-arrow-btn">&#10094;</button>
+            <div class="testimonial-carousel-container">
+                <div class="testimonial-node-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=60" alt="Jaspreet Singh" class="author-avatar-frame">
+                    <div class="rating-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <h3>JASPREET SINGH</h3>
+                    <p>I am Jaspreet Singh (@writer_jass). I am very thankful to Pen Drop Publication for giving me this opportunity to publish my writes in their national anthology. All the team members are extremely helpful in every situation.</p>
+                    <div class="testimonial-timestamp-row">
+                        <span class="timestamp-text">5 months ago</span>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Review" class="google-source-icon">
+                    </div>
+                </div>
+                <div class="testimonial-node-card">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=60" alt="Siddharth Bhaskar" class="author-avatar-frame">
+                    <div class="rating-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <h3>SIDDHARTH BHASKAR</h3>
+                    <p>My book's journey to release was a magnificent experience. The multiverse anthology published by Pen Drop Publications is top tier. The work they do is so clean and they quickly completed and distributed it. Thanks team!</p>
+                    <div class="testimonial-timestamp-row">
+                        <span class="timestamp-text">8 months ago</span>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Review" class="google-source-icon">
+                    </div>
+                </div>
+                <div class="testimonial-node-card">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=60" alt="Gauri Priya" class="author-avatar-frame">
+                    <div class="rating-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <h3>GAURI PRIYA D</h3>
+                    <p>With the platform and the incredible editorial opportunity they provided, I could become a recognized co-author here. Moving up from simple school level writing, I look forward to my long journey as a published author with them.</p>
+                    <div class="testimonial-timestamp-row">
+                        <span class="timestamp-text">2 months ago</span>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Review" class="google-source-icon">
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow-btn">&#10095;</button>
+        </div>
+    </section>
+
     <section id="submissions" class="portal-bg">
         <div class="section-container">
             <div class="section-header">
@@ -951,18 +1297,57 @@
         </div>
     </section>
 
-    <footer>
-        <div class="footer-brand">PEN DROP POETRY</div>
-        <div class="footer-subbrand">PUBLICATIONS</div>
-        
-        <div class="footer-legal-container">
-            <span>&copy; 2026 Pen Drop Poetry Publications. All rights reserved.</span>
-            <div class="verification-dot"></div>
-            <span>Registered Independent Literary House</span>
-            <div class="verification-dot"></div>
-            <span>Verified Partner Setup</span>
+    <!-- PREMIUM HIGH-CONVERTING MEGA FOOTER WITH INTEGRATED SOCIALS -->
+    <footer class="main-footer">
+        <div class="footer-columns-grid">
+            
+            <div class="footer-brand-col">
+                <div class="footer-logo-wrapper">
+                    <img src="images/logo.jpeg" alt="Pen Drop Publications Logo" class="footer-logo-img">
+                    <div class="footer-brand-title">PEN DROP POETRY</div>
+                </div>
+                <p class="footer-mission-text">
+                    At Pen Drop Poetry Publications, we believe that every story is a star waiting to shine. Whether you're a first-time author or an experienced writer, we provide everything you need to bring your words to life — from publishing and editing to global distribution and marketing. Join us on this literary journey. Because your words deserve more than just a page — they deserve a stage.
+                </p>
+            </div>
+
+            <div class="footer-links-col">
+                <a href="#about">Home</a>
+                <a href="#about">About Our Mission</a>
+                <a href="#catalog">Featured Catalog</a>
+            </div>
+
+            <div class="footer-links-col">
+                <a href="#submissions">Submit Manuscript</a>
+                <a href="#submissions">Submissions Portal</a>
+                <a href="#submissions">Author Guidelines</a>
+            </div>
+
+            <div class="footer-newsletter-card">
+                <div class="newsletter-title">Be the FIRST to know!</div>
+                <div class="newsletter-desc">Get latest updates & exclusive discounts straight to your inbox.</div>
+                <input type="email" class="newsletter-input-box" placeholder="Enter your email">
+                <button class="newsletter-btn">Subscribe</button>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom-strip">
+            <div class="footer-copyright">
+                &copy; 2026 Pen Drop Publications. All rights reserved. This website is owned by Pen Drop Publication. Designed and developed for Pen Drop.
+            </div>
+            <div class="footer-social-row">
+                <a href="https://www.instagram.com/pendroppublication_02?igsh=azJ6djZ0aW1odHJh" target="_blank" class="social-icon-circle" title="Instagram">ig</a>
+                <a href="https://www.linkedin.com/company/pen-drop-publication/" target="_blank" class="social-icon-circle" title="LinkedIn">in</a>
+                <a href="https://chat.whatsapp.com/CmBMRSZJoYf0TScsqbntZb?s=cl&p=a&mlu=2&ilr=0" target="_blank" class="social-icon-circle" title="WhatsApp Channel">wa</a>
+            </div>
         </div>
     </footer>
+
+    <!-- DYNAMIC FLOATING STICKY WHATSAPP COMPONENT -->
+    <a href="https://chat.whatsapp.com/CmBMRSZJoYf0TScsqbntZb?s=cl&p=a&mlu=2&ilr=0" target="_blank" class="whatsapp-sticky-icon" id="whatsapp-float">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Join Pen Drop WhatsApp Group">
+    </a>
 
     <script>
         const coreCursor = document.getElementById('primary-ink-cursor');
@@ -990,11 +1375,7 @@
             }
         });
 
-        /* ==========================================================================
-           --- NEW RUNTIME INTERACTIVE SCRIPT MOTORS BLOCK (UNTOUCHED FOUNDATION) ---
-           ========================================================================== */
-
-        // Smooth Counter Numerical Incrementation Logic setup via Intersection Observers
+        // Numerical Incrementation Engine for Milestones
         const triggerStatsCountingAnimation = (elementsArray) => {
             elementsArray.forEach(statElement => {
                 const targetMaxVal = parseInt(statElement.getAttribute('data-target'), 10);
@@ -1002,43 +1383,42 @@
                 let baseCurrentCounter = 0;
 
                 const logicTimerMotor = setInterval(() => {
-                    if(targetMaxVal > 1000) {
-                        baseCurrentCounter += Math.ceil(targetMaxVal / 100);
+                    if(targetMaxVal > 100) {
+                        baseCurrentCounter += Math.ceil(targetMaxVal / 50);
                     } else {
                         baseCurrentCounter++;
                     }
 
                     if (baseCurrentCounter >= targetMaxVal) {
-                        statElement.innerText = targetMaxVal + (targetMaxVal === 100 ? "" : "+");
+                        statElement.innerText = targetMaxVal + "+";
                         clearInterval(logicTimerMotor);
                     } else {
                         statElement.innerText = baseCurrentCounter;
                     }
-                }, Math.max(stepIncrementDuration, 12));
+                }, Math.max(stepIncrementDuration, 15));
             });
         };
 
-        // Scroll Viewport Tracking for Roadmap fade-ins and Counter launches
-        const activeLayoutObserver = new IntersectionObserver((activeScrolledEntries, currentObserverRef) => {
+        // Scroll Intersection Animation Manager
+        const activeLayoutObserver = new IntersectionObserver((activeScrolledEntries) => {
             activeScrolledEntries.forEach(entry => {
                 if (entry.isIntersecting) {
                     if (entry.target.classList.contains('stats-counter-banner')) {
                         const targetElements = entry.target.querySelectorAll('.stat-number');
                         triggerStatsCountingAnimation(targetElements);
-                        currentObserverRef.unobserve(entry.target);
-                    } else if (entry.target.classList.contains('roadmap-step-card')) {
+                    } else {
                         entry.target.classList.add('is-visible');
                     }
                 }
             });
-        }, { threshold: 0.15 });
+        }, { threshold: 0.1 });
 
-        // Connect Injected Structural Blocks to Viewport Engine Trackers
+        // Bind Elements to Observer Layout Engine
         const targetStatBoxSection = document.querySelector('.stats-counter-banner');
         if(targetStatBoxSection) activeLayoutObserver.observe(targetStatBoxSection);
 
-        document.querySelectorAll('.roadmap-step-card').forEach((stepItemCard) => {
-            activeLayoutObserver.observe(stepItemCard);
+        document.querySelectorAll('.animated-section-header-custom').forEach((headerElement) => {
+            activeLayoutObserver.observe(headerElement);
         });
     </script>
 
