@@ -451,7 +451,7 @@
         .form-field input:focus, .form-field textarea:focus { border-color: var(--brand-cyan); }
 
         /* ==========================================================================
-           --- COPIED COMPETITOR ANIMATION LAYERS & LAYOUT PROPERTIES ---
+           --- BRAND ALIGNED MEGA-FOOTER & CONTENT EXTENSION LAYER STYLES ---
            ========================================================================== */
         
         .registered-tag {
@@ -510,7 +510,7 @@
             font-weight: 600;
         }
 
-        /* 1. Our Services Styling Layout */
+        /* Our Services Component Structural Frame */
         .services-section {
             background-color: #ffffff;
             padding: 100px 40px;
@@ -588,7 +588,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* 2. Get Published Blocks Layout Configuration */
+        /* Get Published Architecture Blocks Layout Frame */
         .get-published-section {
             background-color: #ffffff;
             padding: 100px 40px;
@@ -640,7 +640,7 @@
             line-height: 1.6;
         }
 
-        /* 3. Testimonials Interactive Blocks Setup */
+        /* Testimonials Slider Profile Nodes Layout Framework */
         .testimonials-section {
             background-color: #ffffff;
             padding: 100px 40px;
@@ -745,7 +745,7 @@
             background-color: var(--brand-orange);
         }
 
-        /* Animated Section Headers Engine Properties */
+        /* Animated Scroll Entrance Observer Target Foundation */
         .animated-section-header-custom {
             opacity: 0;
             transform: translateY(35px);
@@ -757,7 +757,7 @@
             transform: translateY(0);
         }
 
-        /* Premium Structural Multi-Column Footer */
+        /* Premium Brand Layout Column Footer Structural Variables */
         .main-footer {
             background-color: var(--brand-navy);
             color: #ffffff;
@@ -940,7 +940,7 @@
             fill: #ffffff;
         }
 
-        /* Floating Sticky WhatsApp Button System */
+        /* Floating Sticky WhatsApp Button System Configuration */
         .whatsapp-sticky-icon {
             position: fixed;
             bottom: 25px;
@@ -962,7 +962,7 @@
             object-fit: contain;
         }
 
-        /* KEYFRAMES CORE ANIMATIONS TIMELINE ENGINE */
+        /* KEYFRAMES CORE ANIMATIONS TIMELINE ENGINE MASTER SHEET */
         @keyframes steadyTheaterFloat {
             0% { transform: rotateX(15deg) rotateY(-10deg) translateY(0px); }
             100% { transform: rotateX(22deg) rotateY(-20deg) translateY(-15deg); }
@@ -1266,7 +1266,7 @@
                     <img src="images/aparna.jpeg" alt="Aparna Mishra" class="author-avatar-frame">
                     <div class="rating-stars-row">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
                     <h3>APARNA MISHRA</h3>
-                    <p>"So thank you pen drop for sending me the award . It was a very quick delivery of the momento and participating in the national poetry contest and winning a position in that felt like a dream. I would love to participate in your events in future. Keep it up pen drop ! 💖"</p>
+                    <p>"So thank you pen drop for sending me the award . It was a very quick delivery of the memento and participating in the national poetry contest and winning a position in that felt like a dream. I would love to participate in your events in future. Keep it up pen drop ! 💖"</p>
                     <div class="testimonial-timestamp-row">
                         <span class="timestamp-text">Just now</span>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google Review" class="google-source-icon">
@@ -1368,8 +1368,12 @@
             <div class="footer-newsletter-card">
                 <div class="newsletter-title">Be the FIRST to know!</div>
                 <div class="newsletter-desc">Get latest updates & exclusive discounts straight to your inbox.</div>
-                <input type="email" class="newsletter-input-box" placeholder="Enter your email">
-                <button class="newsletter-btn">Subscribe</button>
+                
+                <form name="newsletter-subscribers" method="POST" data-netlify="true" style="display: flex; flex-direction: column; gap: 15px; width: 100%;">
+                    <input type="hidden" name="form-name" value="newsletter-subscribers" />
+                    <input type="email" name="subscriberEmail" class="newsletter-input-box" placeholder="Enter your email" required>
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </form>
             </div>
 
         </div>
